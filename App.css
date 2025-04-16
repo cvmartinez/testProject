@@ -1,0 +1,150 @@
+:root {
+  --mousex-delta: 0;
+  --mousey-delta: 0;
+  --scroll-delta: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+.dynamic-transform {
+  transform: translate(calc(0% + 8%* var(--mousex-delta)), calc(0% + 8%* var(--mousey-delta) - 14%* var(--scroll-delta)));
+  transition: transform 0.1s ease-out;
+  /* Optional: smoother transition */
+
+}
+
+.dynamic-transform-absolute {
+  position: absolute;
+  transform: translate(calc(0% + 6% * var(--mousex-delta))) translateY(calc(0% - 25% * var(--scroll-delta) + 1% * var(--mousey-delta)));
+  transition: transform 0.1s ease-out;
+  /* Optional: smoother transition */
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.home-main {
+  background: black;
+  min-height: 100vh;
+
+
+  .home-header {
+    background: black;
+    padding: 10px 60px 0px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: -webkit-fill-available;
+
+    /* background-color: rgba(16, 16, 16, .9);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px); */
+
+  }
+
+  .home-body {
+    display: flex;
+    flex-flow: column;
+    padding: 100px 40px 20px 40px;
+    color: rgb(255, 255, 255);
+    margin-top: 40px;
+    background-image: url('../public/assets/Background/star-bg.webp');
+
+  }
+
+  .setCourse {
+    font-family: "Shentox", "Rogan", sans-serif;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    padding: 9vw 0 20vw;
+    background-image: url('../public/assets/Background/space-craft.webp') !important;
+    height: 400px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+
+  }
+
+  .home-footer {
+    color: #FFF;
+    padding: 20px;
+    font-size: 44px;
+
+    .name {
+      display: flex;
+      gap: 10px;
+      font-size: 24px;
+      padding: 10px;
+
+      .linkdin-ico {
+        background-color: #000;
+        cursor: pointer;
+
+        path {
+          fill: #FFF;
+        }
+
+        transition: .2s ease-in-out;
+      }
+
+      .linkdin-ico:hover {
+        background-color: #FFF;
+        height: 25px;
+        width: 25px;
+        border-radius: 35%;
+
+        path {
+          fill: #0A66C2;
+        }
+      }
+    }
+  }
+
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
